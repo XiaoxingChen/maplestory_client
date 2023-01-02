@@ -19,9 +19,11 @@
 #include "../OutPacket.h"
 
 #include <string_view>
+#include <iostream>
 
 namespace jrc
 {
+constexpr std::string_view HWID_NIB = "abcd";
 //! Accept the Terms of Service.
 //! Opcode: ACCEPT_TOS(0x07)
 class TOSPacket : public OutPacket
@@ -42,6 +44,9 @@ public:
     {
         write_string(acc);
         write_string(pass);
+        write_string("123456");
+        write_string(HWID_NIB);
+        std::cout << "send login packet" << std::endl;
     }
 };
 

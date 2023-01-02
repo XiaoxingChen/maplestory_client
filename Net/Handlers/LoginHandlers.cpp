@@ -28,6 +28,7 @@
 #include "../Packets/LoginPackets.h"
 #include "../Session.h"
 #include "Helpers/LoginParser.h"
+#include <iostream>
 
 namespace jrc
 {
@@ -110,6 +111,7 @@ void CharlistHandler::handle(InPacket& recv) const
     // Parse all characters.
     std::vector<CharEntry> characters;
     auto char_count = static_cast<std::uint8_t>(recv.read_byte());
+    std::cout << "char_count: " << int(char_count) << std::endl;
     for (std::uint8_t i = 0; i < char_count; ++i) {
         characters.emplace_back(LoginParser::parse_charentry(recv));
     }

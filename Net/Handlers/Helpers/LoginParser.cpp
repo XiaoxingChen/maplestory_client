@@ -71,7 +71,9 @@ World LoginParser::parse_world(InPacket& recv)
 CharEntry LoginParser::parse_charentry(InPacket& recv)
 {
     std::int32_t cid = recv.read_int();
+    std::cout << "char id: " << cid << std::endl;
     StatsEntry stats = parse_stats(recv);
+    std::cout << "char name: " << stats.name << std::endl;
     LookEntry look = parse_look(recv);
 
     recv.read_bool(); // 'rankinfo' bool
@@ -96,7 +98,7 @@ StatsEntry LoginParser::parse_stats(InPacket& recv)
 {
     StatsEntry statsentry;
 
-    statsentry.name = std::move(recv.read_string_raw());
+    statsentry.name = std::move(recv.read_padded_string(13));
 
     recv.read_bool(); // gender
     recv.read_byte(); // skin

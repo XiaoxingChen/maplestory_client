@@ -23,7 +23,7 @@
 namespace jrc
 {
 constexpr std::string_view MACS = "68-5D-43-F8-B8-6C, 7A-79-19-8B-31-3F";
-constexpr std::string_view HWID = "685D43F8_B86C7A79";
+constexpr std::string_view HWID = "685D43F8B86C_7A79198B";
 
 //! Tell the server which character was picked.
 //! Opcode: SELECT_CHAR(19)

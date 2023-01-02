@@ -52,6 +52,8 @@ void Background::settype(Type type)
         cy = animation.get_dimensions().y();
     }
 
+    std::cout << "cx: " << cx << ", cy: " << cy << std::endl;
+
     htile = 1;
     vtile = 1;
     switch (type) {
