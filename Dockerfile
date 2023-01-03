@@ -8,4 +8,5 @@ RUN apt-get -y update \
     && ln -s /usr/bin/llvm-ranlib-10 /usr/bin/llvm-ranlib \
     && ln -s /usr/bin/lld-10 /usr/bin/lld \
     && ln -s /usr/bin/clang-10 /usr/bin/clang \
-    && ln -s /usr/bin/clang++-10 /usr/bin/clang++ 
+    && ln -s /usr/bin/clang++-10 /usr/bin/clang++ \
+    && useradd -m docker 
